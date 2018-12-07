@@ -6,7 +6,7 @@
  * Time: 11:35
  */
 
-echo "Hello Wrrld";
+echo "Hello World";
 ?>
 
 <!doctype html>
