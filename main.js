@@ -1,8 +1,29 @@
-let num = [10, 20, 12, 5, 1, 0];
-console.log(num.sort());
-num.sort(function (a, b) {
-    console.log(a, b);
-    return a - b;
-});
+//Doc
+let tasks = [
+    "Выучить JavaScrip",
+    "Выучить Angular 4",
+    "Выучить HTML"
+];
 
-console.log(num);
+let ul = document.querySelector('.list-group');
+
+function generateList(tasksArray) {
+    for ( let i = 0; i < tasks.length; i++ ) {
+        let li = listTemplate(tasksArray[i]);
+        ul.appendChild(li);
+    }
+}
+
+function listTemplate(task) {
+    let li = document.createElement('li');
+    li.textContent = task;
+    li.className = 'list-group-item';
+
+    return li;
+}
+
+function addList(list) {
+    tasks.push(list);
+    generateList(tasks)
+}
+generateList(tasks);
