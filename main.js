@@ -22,6 +22,7 @@ function listTemplate(task) {
     return li;
 }
 
+
 function addList(list) {
     tasks.push(list);
     generateList(tasks)
