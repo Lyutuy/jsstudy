@@ -16,10 +16,11 @@
     <section class="task-wrap mt-5">
         <div class="container">
             <h3 class="text-center">Task List</h3>
-            <ul class="list-group">
+            <ul class="list-group  mb-3">
                 <!-- <li class="list-group-item">Cras justo odio</li> -->
                 
             </ul>
+            <button class="btn btn-primary">Clear list</button>
         </div>
 
     </section>
