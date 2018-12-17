@@ -4,10 +4,13 @@ let tasks = [
     "Выучить Angular 4",
     "Выучить HTML"
 ];
-
+    
 let ul = document.querySelector('.list-group');
 
 function generateList(tasksArray) {
+
+    clearList();
+
     for ( let i = 0; i < tasks.length; i++ ) {
         let li = listTemplate(tasksArray[i]);
         ul.appendChild(li);
@@ -22,9 +25,15 @@ function listTemplate(task) {
     return li;
 }
 
+function clearList() {
+    ul.innerHTML = '';
+}
 
 function addList(list) {
-    tasks.push(list);
+    tasks.unshift(list);
     generateList(tasks)
 }
+
+
+
 generateList(tasks);
