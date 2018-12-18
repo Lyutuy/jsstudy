@@ -18,9 +18,16 @@ function generateList(tasksArray) {
 }
 
 function listTemplate(task) {
+    //Create list item
     let li = document.createElement('li');
     li.textContent = task;
-    li.className = 'list-group-item';
+    li.className = 'list-group-item d-flex';
+    //Create tag fa-trash-alt
+    let iDelete = document.createElement('i');
+    iDelete.className = 'far fa-trash-alt delete-item ml-auto';
+
+    //Append delete icon to li
+    li.appendChild(iDelete);
 
     return li;
 }
@@ -35,5 +42,12 @@ function addList(list) {
 }
 
 
-
 generateList(tasks);
+
+let btn = document.querySelector('.clear-btn');
+
+function onClick(e){
+    console.log(e);
+}
+
+btn.addEventListener('click', onClick);
