@@ -6,6 +6,8 @@ let tasks = [
 ];
     
 let ul = document.querySelector('.list-group');
+let deleteBtns = document.getElementsByClassName('delete-item');
+let btn = document.querySelector('.clear-btn');
 
 function generateList(tasksArray) {
 
@@ -15,13 +17,14 @@ function generateList(tasksArray) {
         let li = listTemplate(tasksArray[i]);
         ul.appendChild(li);
     }
+    setDeleteEvent();
 }
 
 function listTemplate(task) {
     //Create list item
     let li = document.createElement('li');
     li.textContent = task;
-    li.className = 'list-group-item d-flex';
+    li.className = 'list-group-item d-flex align-items-center';
     //Create tag fa-trash-alt
     let iDelete = document.createElement('i');
     iDelete.className = 'far fa-trash-alt delete-item ml-auto';
@@ -41,13 +44,17 @@ function addList(list) {
     generateList(tasks)
 }
 
-
-generateList(tasks);
-
-let btn = document.querySelector('.clear-btn');
-
-function onClick(e){
-    console.log(e);
+function setDeleteEvent() {
+    for ( let i = 0; i < deleteBtns.length; i++ ) {
+        deleteBtns[i].addEventListener('click', function (e) {
+        });
+    }
 }
 
-btn.addEventListener('click', onClick);
+ul.addEventListener('click', function (e) {
+    if ( e.target.classList.contains('delete-item') ) {
+        console.log(e.target);
+    }
+});
+
+generateList(tasks);
