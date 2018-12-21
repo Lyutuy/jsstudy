@@ -17,15 +17,31 @@
 
     <section class="task-wrap mt-5">
         <div class="container">
-            <h3 class="text-center">Task List</h3>
-            <ul class="list-group  mb-3">
-                <!-- <li class="list-group-item">Cras justo odio</li> -->
-                
-            </ul>
+            <div class="card mb-3">
+                <div class="card-header">
+                    Add todo
+                </div>
+                <div class="card-body">
+                    <form action="" name="addTodoItem">
+                        <div class="form-group">
+                            <label for="todoText">Text</label>
+                            <input type="text" class="form-control" id="todoText">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header">
+                    Task list
+                </div>
+                <div class="card-body">
+                    <ul class="list-group"></ul>
+                </div>
+            </div>
             <button class="btn btn-primary clear-btn">Clear list</button>
         </div>
-
-    </section>
+    <section>
     <script src="main.js"></script>
 </body>
 </html>

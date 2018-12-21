@@ -6,8 +6,7 @@ let tasks = [
 ];
 
 let ul = document.querySelector('.list-group');
-let deleteBtns = document.getElementsByClassName('delete-item');
-let btn = document.querySelector('.clear-btn');
+let form = document.forms['addTodoItem'];
 
 function generateList(tasksArray) {
 
@@ -17,7 +16,6 @@ function generateList(tasksArray) {
         let li = listTemplate(tasksArray[i]);
         ul.appendChild(li);
     }
-    setDeleteEvent();
 }
 
 function listTemplate(task) {
@@ -44,13 +42,6 @@ function addList(list) {
     generateList(tasks)
 }
 
-function setDeleteEvent() {
-    for ( let i = 0; i < deleteBtns.length; i++ ) {
-        deleteBtns[i].addEventListener('click', function (e) {
-
-        });
-    }
-}
 
 function deleteListItem(target) {
     let parent = target.closest('li');
@@ -63,6 +54,9 @@ ul.addEventListener('click', function (e) {
     if ( e.target.classList.contains('delete-item') ) {
         deleteListItem(e.target);
     }
+});
+form.addEventListener('submit', function (e) {
+    console.log('submit');
 });
 
 generateList(tasks);
