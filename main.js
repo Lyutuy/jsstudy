@@ -4,7 +4,7 @@ let tasks = [
     "Выучить Angular 4",
     "Выучить HTML"
 ];
-    
+
 let ul = document.querySelector('.list-group');
 let deleteBtns = document.getElementsByClassName('delete-item');
 let btn = document.querySelector('.clear-btn');
@@ -47,13 +47,21 @@ function addList(list) {
 function setDeleteEvent() {
     for ( let i = 0; i < deleteBtns.length; i++ ) {
         deleteBtns[i].addEventListener('click', function (e) {
+
         });
     }
 }
 
+function deleteListItem(target) {
+    let parent = target.closest('li');
+    let index = tasks.indexOf(parent.textContent);
+    tasks.splice(index, 1);
+    parent.remove();
+}
+
 ul.addEventListener('click', function (e) {
     if ( e.target.classList.contains('delete-item') ) {
-        console.log(e.target);
+        deleteListItem(e.target);
     }
 });
 
